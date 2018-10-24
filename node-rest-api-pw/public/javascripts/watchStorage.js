@@ -2,7 +2,7 @@ class WatchList {
         
     constructor(){
         this.watchList = [];
-        this.watchList[0] = JSON.stringify({Marca:"Rolex",
+        /*this.watchList[0] = JSON.stringify({Marca:"Rolex",
                                         Modelo:"Aquamaster",
                                         Tipo:"Casual",
                                         Año:"2019",
@@ -21,7 +21,7 @@ class WatchList {
                                         Año:"2017",
                                         Diametro:"38 mm",
                                         Imagen: "URL-EMPTY"});
-
+*/
     }
     create(newItem){
         function compareNumbers(a, b) {
