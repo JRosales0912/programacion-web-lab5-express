@@ -37,6 +37,7 @@ router.get('/:watchId?', function(req, res, next) {
 
 /* SAVE PRODUCT */
 router.post('/', function(req, res, next) {
+  console.log(req.body);
     Watches.create(req.body, function (err, post) {
     if (err) res.status(404).send("no se pudo agregar");
   })
