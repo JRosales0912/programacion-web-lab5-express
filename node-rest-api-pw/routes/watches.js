@@ -7,7 +7,6 @@ router.get('/:watchId?', function(req, res, next) {
   var foundItems = null;
   if(req.params.watchId)
   {
-    console.log('in watches');
     Watches.findById(req.params.watchId).then(
       function(docs) {
       res.status(200).send(JSON.stringify(docs));
@@ -37,7 +36,6 @@ router.get('/:watchId?', function(req, res, next) {
 
 /* SAVE PRODUCT */
 router.post('/', function(req, res, next) {
-  console.log(req.body);
     Watches.create(req.body, function (err, post) {
     if (err) res.status(404).send("no se pudo agregar");
   })

@@ -20,8 +20,6 @@ class MongoClient
     });
     }
     findById(id){
-        
-    console.log('in client');
         var self = this;
         return new Promise(function(resolve, reject) {
             self.db.WatchesCollection.findOne({

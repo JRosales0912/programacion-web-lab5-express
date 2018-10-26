@@ -6,7 +6,6 @@ class WatchList {
 
     }
     create(newItem){
-        console.log(newItem);
         return this.MongoClient.create(newItem);
     }
     findById(id){
