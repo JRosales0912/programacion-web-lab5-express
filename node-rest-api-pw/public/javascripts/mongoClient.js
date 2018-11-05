@@ -4,7 +4,7 @@ class MongoClient
     constructor()
     {
         this.mongojs = db;
-        this.db = this.mongojs('mongodb://localhost:27017/MongoWatches', ['WatchesCollection']);
+        this.db = this.mongojs('mongodb://mongo-host:27017/MongoWatches', ['WatchesCollection']);
     }
 
     create(newItem){

@@ -1,7 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var Watches = require('../public/javascripts/watchStorage.js');
-var cache = require('express-redis-cache')();
+var cache = require('express-redis-cache')({
+  host: 'redis-host',
+  port: 6379
+});
 
 /*Listeners*/
 cache.on('connected', function () {

@@ -1,0 +1,20 @@
+#backend
+docker build -t nodeserver .
+
+#mongo DB 
+docker build -t mondodb .
+
+#frontend
+docker build -t frontend .
+
+#redis
+docker run --name redisimage -d redis
+
+#run mondodb
+docker run --name mongimage -d mongodb
+
+#back end
+docker run -p 3001:3001 --rm -d --name back-end --link=redisimage:redis-host --link=mongoimage:mongo-host -d nodeserver
+
+#frontend and backend
+docker run -p 3000:3000 --rm -d --name front-end --link=back-end:react-host -d frontend

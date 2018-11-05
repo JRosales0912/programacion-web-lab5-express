@@ -1,0 +1,10 @@
+{
+  "name": "watch-service",
+  "script": "./app.js",
+  "cwd": "./",
+  "watch": true,
+  "log_date_format": "YYYY-MM-DD HH:mm Z",
+  "env": {
+    "PORT": 3001
+  }
+}
