@@ -1,0 +1,18 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+     - "3001:3001"
+  redisimage:
+    image: redis
+    ports:
+     - "3679:3679"
+  mongoimage:
+    image: mongodb
+    ports:
+     - "27020:27017"
+  front-end:
+    image: frontend
+    ports: 
+     - "3000:3000"
