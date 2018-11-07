@@ -1,18 +1,31 @@
-version: '3'
+version: '3'   
 services:
-  web:
-    build: .
-    ports:
-     - "3001:3001"
-  redisimage:
+  redis:
     image: redis
+    container_name: redis-cont
     ports:
-     - "3679:3679"
-  mongoimage:
-    image: mongodb
+    - "6379:6379"
+  mongo:
+    image: mongo-db
+    container_name: mongo-cont
     ports:
-     - "27020:27017"
-  front-end:
+    - "27020:27017"
+    volumes:
+    - data:/var/lib/mongo/data
+  backend:
+    image: nodeserver
+    container_name: nodeserver-cont
+    ports:
+    - "3001:3001"
+    links:
+    - "redis:redis-host"
+    - "mongo:mongo-host"
+  frontend:
     image: frontend
-    ports: 
-     - "3000:3000"
+    container_name: frontend-cont
+    ports:
+    - "3000:3000"
+    links:
+    - "backend:react-host"
+volumes:
+  data: {}
